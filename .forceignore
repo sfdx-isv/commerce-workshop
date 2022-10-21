@@ -1,0 +1,18 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+package.xml
+
+# Ignore all profiles and settings for the Commerce Partner Summit Workshop.
+# If you use this repo as the base for your own
+# project, you may want to remove the two lines, below.
+**profiles
+**settings
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**
