@@ -1,5 +1,20 @@
+/**
+* 1.0 ShippingServiceTest 
+* Description: A dead-simple class that is used as a mock callout to a shipping calculation ISV app. The app simply
+*    returns a static value for simplicity, as its true purpose is to demo points where ISVs can call their app from Salesforce
+* @author James Quinn
+* @date 10/28/2022
+*
+*/
 public with sharing class ShippingService {
 
+    /**
+    * Positive test for the calculateShippingPrice method
+    * @author James Quinn
+    * @date 10/28/2022
+    * @params none
+    * @return List<Decimal>
+    */
     @InvocableMethod(label='Calculate Shipping Price' 
     description='Returns the amount the customer will be charged to ship this order delivery group.'
     iconName='slds:utility:transport_heavy_truck' 
