@@ -17,7 +17,7 @@ public with sharing class ShippingService {
     */
     @InvocableMethod(label='Calculate Shipping Price' 
     description='Returns the amount the customer will be charged to ship this order delivery group.'
-    iconName='slds:utility:transport_heavy_truck' 
+    iconName='slds:custom:custom17' 
     category='Commerce'
     )
     public static List<Decimal> calculateShippingPrice() {
