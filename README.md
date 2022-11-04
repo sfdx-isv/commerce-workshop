@@ -32,7 +32,7 @@ Note: We are keeping the app simple for the sake of this exercise. Realistically
 We will be connecting to *two orgs*: one to build our app inside of, and one to allow us to package the app and list it on AppExchange. We will refer to these as our *Commerce Org* and our *Dev Hub*, respectively. 
 
 1. Tooling setup:
-    2. First, we will *clone the Github repo* we’ve prepared for this workshop, in the interest of time we have partially built our ISV app in advance
+    1. First, we will *clone the Github repo* we’ve prepared for this workshop, in the interest of time we have partially built our ISV app in advance
         1. Go to the [commerce-workshop Github repo](https://github.com/sfdx-isv/commerce-workshop), click the green *Code* button, and *copy* the URL from there
             1. [Image: image.png]
         2. Now open *VS Code*. You may see either the “Get Started” screen in VS Code, or it may open the most recent directory you’ve been working in, it makes no difference for this exercise. 
@@ -50,7 +50,7 @@ We will be connecting to *two orgs*: one to build our app inside of, and one to 
             1. Go to *File* >> *Open Folder* >> *commerce-workshop>> Open*. 
             2. [Image: image.png]
             3. [Image: image.png]
-    3. Next, we will connect the Salesforce CLI to the *Dev Hub* org (so we can later package our app)
+    2. Next, we will connect the Salesforce CLI to the *Dev Hub* org (so we can later package our app)
         1. In VS Code, click on *No Default Org Set* on the bottom toolbar, which will open the Command Palette
         2. In the Command Palette, click on *SFDX: Authorize a Dev Hub*
         3. [Image: image.png]
@@ -64,7 +64,7 @@ We will be connecting to *two orgs*: one to build our app inside of, and one to 
         8. [Image: image.png]
         9. If it asks for your phone number, click *Remind Me Later*
         10. [Image: image.png]
-    4. Finally, connect the Salesforce CLI to your Commerce org (where we will build our app)
+    3. Finally, connect the Salesforce CLI to your Commerce org (where we will build our app)
         1. In VS Code, once again click on *No Default Org Set* on the bottom toolbar, which will open the Command Palette
         2. This time in the Command Palette, click on *SFDX: Authorize an Org* (not a Dev Hub)
         3. [Image: image.png]
@@ -81,7 +81,7 @@ We will be connecting to *two orgs*: one to build our app inside of, and one to 
         12. [Image: image.png]
         13. Notice the bottom toolbar of VS Code no longer says “No Default Org Set”, it says *commerce-workshop-develop*, which is the alias we gave to the Commerce org. It also shows a *plug* icon to indicate that Salesforce CLI is connected to default org
         14. [Image: image.png]
-    5. Congrats! The Salesforce CLI is now connected to both orgs we need: the *Dev Hub* (to package our app later), and the *Commerce* org (where we will build our app now)
+    4. Congrats! The Salesforce CLI is now connected to both orgs we need: the *Dev Hub* (to package our app later), and the *Commerce* org (where we will build our app now)
 2. Build the app in the Commerce org
     1. Part 1: Push code into the Commerce Org
         1. In VS Code, we will now take two Apex classes, *ShippingService.cls* and *ShippingServiceTest.cls*, that we got from cloning the Github repo and push them into the Commerce org so we can use them in the app we’re going to develop
