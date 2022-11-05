@@ -156,12 +156,13 @@ We will be connecting to *two orgs*: one to build our app inside of, and one to 
         51. Search *00001301* and click on the matching Order Summary Record
         52. You should see a screen like this: 
         53. <img width="1907" alt="image (2)" src="https://user-images.githubusercontent.com/39100635/200144132-475c2390-4ae8-419d-9160-b3617e09e2d3.png">
-        54. Look for your *Create Reship Order Clone* flow in the Actions & Recommendations section. If you don’t see it, click on the blue *Add* button and then start typing *Create Reship Order Clone* and then click on it
-        55. Work your way through the flow until you see our new the *screen* we added, which shows that our invocable apex method was successfully called by our flow and returned an amount for the shipping price
-        56. <img width="850" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200144138-20774d15-65ba-4817-8d34-7011c735a8ab.png">
-        57. We have successfully finished development on an ISV app for Salesforce Order Management!
-        58. Next Steps on your own for further learning:
-        59. The Commerce orgs (which you get to keep until they expire) have a more realistic sample implementation of our Shipping app in the Apex class B2BDeliverySample (go to Setup >> Apex Classes to find this in your org), feel free to save the code for reference.
+        54. Look for your *Create Reship Order Clone* flow in the *Actions & Recommendations* section. If you don’t see it, click on the blue *Add* button and then start typing *Create Reship Order Clone* and then click on it
+        55. <img width="1398" alt="image (1)" src="https://user-images.githubusercontent.com/39100635/200145200-672e7964-111c-4e7b-8caa-a0548732e758.png">
+        56. Work your way through the flow until you see our new the *screen* we added, which shows that our invocable apex method was successfully called by our flow and returned an amount for the shipping price
+        57. <img width="850" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200144138-20774d15-65ba-4817-8d34-7011c735a8ab.png">
+        58. We have successfully finished development on an ISV app for Salesforce Order Management!
+        59. Next Steps on your own for further learning:
+        60. The Commerce orgs (which you get to keep until they expire) have a more realistic sample implementation of our Shipping app in the Apex class B2BDeliverySample (go to Setup >> Apex Classes to find this in your org), feel free to save the code for reference.
     3. Part 3: Configure a Sample B2B Commerce ISV App
         1. In the org, click the *cog wheel* toward the top right of your screen and click *Setup*.
         2. <img width="930" alt="image" src="https://user-images.githubusercontent.com/39100635/200144305-b732136e-1485-4f3b-a375-c25c790c5aa2.png">
@@ -230,7 +231,7 @@ We will be connecting to *two orgs*: one to build our app inside of, and one to 
     3. To retrieve our B2B Commerce flow, paste the following command into VS Code’s embedded terminal:
         1. `sfdx force:source:retrieve -m Flow:Checkout_Flow_Template_Clone`
             1. You should receive a confirmation message:
-            2. [Image: image.png]
+            2. <img width="769" alt="image" src="https://user-images.githubusercontent.com/39100635/200145726-cf622a20-3075-474d-a89e-5246a5eb917f.png">
         2. To retrieve the Order Management flow, paste `sfdx force:source:retrieve -m Flow:Create_Reship_Order_Clone` into VS Code's embedded terminal
     4. All of the functionality that we developed inside the org, along with the pre-written code we got from Github initially, is now in our *local directory* which can be seen in VS Code’s left pane. Next step is to package it for distribution and sale
     5. We are going to skip a few steps of development lifecycle here. Here is an opinionated view of the steps we are skipping:
@@ -255,41 +256,20 @@ We will be connecting to *two orgs*: one to build our app inside of, and one to 
         2. We strongly advise ISVs to use this *PBO* as their *Dev Hub*, which means it will own all 2GPs (second-generation packages)
     3. To connect your package to your Partner Community login:
         1. Log in to the [Partner Community](http://partners.salesforce.com/)
-        2. [Image: image.png]
-        3. [Image: image.png]
-        4. [Image: image.png]
+        2. <img width="868" alt="image (1)" src="https://user-images.githubusercontent.com/39100635/200146130-87ac2a98-6f45-42e3-b482-f0fd5a275bbd.png">
+        3. <img width="430" alt="image (2)" src="https://user-images.githubusercontent.com/39100635/200146141-b2a38ebd-9d29-42f9-aef9-9a876d02d486.png">
+        4. <img width="401" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200146151-8b3c7811-5016-4b06-be5a-68b8cbd36e0c.png">
         5. Click on the *Publishing* tab
-        6. [Image: image.png]
+        6. <img width="697" alt="image (4)" src="https://user-images.githubusercontent.com/39100635/200146166-630f7375-c463-44ef-98ca-6ed9f1688e05.png">
         7. then click on the *Organizations* subtab
-        8. [Image: image.png]
+        8. <img width="876" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200146172-bc12e5a5-38d2-408d-9394-08afc0e8209a.png">
         9. If you don’t see your Dev Hub org, click the *Connect Org* button and log in to it
-        10. [Image: image.png]
+        10. <img width="1075" alt="image (6)" src="https://user-images.githubusercontent.com/39100635/200146176-56e4132d-6c9f-4fa6-ba26-e2779534631b.png">
         11. Now go to the *Packages* subtab and you should see your package
-        12. [Image: image.png]
+        12. <img width="1127" alt="image (7)" src="https://user-images.githubusercontent.com/39100635/200146190-19a9c02c-6a35-4d38-b095-ea3ec8d99657.png">
     4. Notice there are options here to *Start Review* and *Create Listing*. These can be done in parallel. Security Review takes time, so in the meantime you can design and optimize how you want your future AppExchange Listing to look
         1. Security Review goes a lot smoother if you understand what best practices it will check for before you start developing a real ISV application
         2. Here is how to [prepare for](https://trailhead.salesforce.com/content/learn/modules/isv_security_review/isv_security_review_prepare?trail_id=isv_developer_beginner) and [submit for](https://trailhead.salesforce.com/content/learn/modules/isv_security_review/isv_security_review_submit?trail_id=isv_developer_beginner) Security Review, and a [requirements checklist](https://partners.salesforce.com/0693A000007QbpbQAC) to help you ace your review. Please read this carefully, as Security Review can cause major go-live delays if we have to have many cycles of submitting, rejection, and resubmitting
     5. Once you are notified that your app has passed Security Review, you can go to the *Listings* subtab and click the *Publish Listing* button to make your app live on the AppExchange for customers to find!
-    6. [Image: image.png]
+    6. <img width="822" alt="image (8)" src="https://user-images.githubusercontent.com/39100635/200146196-d102c252-6591-4fd0-9e49-7f7a1edddec6.png">
     7. Congratulations, your live AppExchange listing will now start [generating leads](https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/appexchange_leads_intro.htm)!
-
-
-
-# Salesforce DX Project: Next Steps
-
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
-
-## How Do You Plan to Deploy Your Changes?
-
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
