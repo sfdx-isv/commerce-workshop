@@ -87,78 +87,78 @@ We will be connecting to *two orgs*: one to build our app inside of, and one to 
         1. In VS Code, we will now take two Apex classes, *ShippingService.cls* and *ShippingServiceTest.cls*, that we got from cloning the Github repo and push them into the Commerce org so we can use them in the app we’re going to develop
         2. In the left pane of VS Code you should see a file directory. If you don’t see this, click on the topmost icon in the left sidebar to open it.
         3. Click on the *force-app* folder
-        4. [Image: image.png]
+        4. <img width="261" alt="image" src="https://user-images.githubusercontent.com/39100635/200143818-0bc869a2-d8bd-46e9-b55e-f49f377eeab4.png">
         5. From there, *right-click* on the *classes* folder, which opens a pop-up menu
         6. Click on the *SFDX: Deploy Source to Org* option, near the bottom
-        7. [Image: image.png]
+        7. <img width="498" alt="image (1)" src="https://user-images.githubusercontent.com/39100635/200143824-6a26bebc-8b9d-4e4e-91f7-5511fde424d7.png">
         8. You should receive a success message pop-up window near the bottom right of your VS Code window
-        9. [Image: image.png]
+        9. <img width="1124" alt="image (2)" src="https://user-images.githubusercontent.com/39100635/200143825-5d7af84d-7d37-444a-b8a8-26726177694b.png">
         10. Now, toward the left side of the bottom toolbar, click on the below icon, which resembles a mini browser window. This opens the Commerce org in your browser. Notice you don’t have to log in again!
-        11. [Image: image.png]
+        11. <img width="189" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200143826-e9d2b3a7-ccd9-4e97-a8b2-7e205cfa0178.png">
     2. Part 2: Configure a Sample Order Management ISV App
         1. Overview: Since our use case is a Shipping Calculation ISV App, we will clone and modify one of Order Management’s out-of-the-box flows, a reshipment flow, to leverage our ISV app’s functionality
         3. In the Commerce org, click the *cog wheel* toward the top right of your screen and click *Setup*.
-        4. [Image: image.png]
+        4. <img width="930" alt="image" src="https://user-images.githubusercontent.com/39100635/200143863-5751a3e8-8eae-468b-8510-2460ee080ff5.png">
         5. Type “Flow” in the quick find search near the top left of the Setup menu, and click *Flows*. 
-        6. [Image: image.png]
+        6. <img width="348" alt="image (1)" src="https://user-images.githubusercontent.com/39100635/200143866-e4265715-59d6-4f96-94ce-bd82ea744b54.png">
         7. Find and *click on* the Flow named *Create Reship Order* to open it
-        8. [Image: image.png]
+        8. <img width="709" alt="image (2)" src="https://user-images.githubusercontent.com/39100635/200143875-a86d1f41-8803-4b2a-ab9d-b5abe4f2c6a5.png">
         9. Click *Save As*
-        10. [Image: image.png]
+        10. <img width="858" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200143877-1fc05234-79f2-44b1-b560-0fc4ee62ba9d.png">
         11. In the popup window, click *A New Flow*
         12. For Flow Label, type *Create Reship Order Clone*. The API name will be auto-populated to *Create_Reship_Order_Clone*
         13. Click *Save*
-        14. [Image: image.png]
+        14. <img width="636" alt="image (4)" src="https://user-images.githubusercontent.com/39100635/200143881-93a13257-6e99-4379-8987-5c00037654c1.png">
         15. Now in your newly cloned flow, *drag* the screen to the right on the flow canvas (the big area on the right side), and look for the blue Screen element titled *Location Selection*
-        16. [Image: image.png]
+        16. <img width="859" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200143887-e4f68c56-309d-400c-ad9f-4fceeb4612fc.png">
         17. From the *Flow Toolbox* (the panel on the left side of the screen), drag an *Action* element onto the canvas, to the *right* of the *Location Selection* element
-        18. [Image: image.png]
+        18. <img width="121" alt="image (6)" src="https://user-images.githubusercontent.com/39100635/200143897-97e02fb9-5a61-4680-ba4d-eaa54cf3ddf0.png">
         19. In the pop-up that opens, for the *Category* on the left side, click *Commerce*
         20. Then in the *Action* box on the right, select *Calculate Shipping Price*, which is an invocable Apex method in the Apex class we pushed into the org earlier. 
         21. Name the element *Calculate Shipping Price*.
-        22. [Image: image.png]
+        22. <img width="908" alt="image (7)" src="https://user-images.githubusercontent.com/39100635/200143944-66078de0-f835-4f62-8fde-ffa6cad7ddd6.png">
         23. For the Label, type *Calculate Shipping Price* and click *Done*
-        24. [Image: image.png]
+        24. <img width="755" alt="image" src="https://user-images.githubusercontent.com/39100635/200143990-ebf153a1-5691-4da6-a3b1-e5a615e3c0c0.png">
             1. The use case is a bit contrived- we are adding a shipping calculation to a re-ship request flow. Usually a re-ship request happens because a customer’s original shipment was lost or damaged and many companies will not charge any money to re-ship, to provide good customer service. This use case educational only, and is not business advice on whether to charge customers for shipping or not.
         25. So that we can easily see the results of this Apex action, drag a *Screen* element from the *Flow Toolbox* on the left into the canvas to the *right* of our new Apex action
-        26. [Image: image.png]
+        26. <img width="152" alt="image (1)" src="https://user-images.githubusercontent.com/39100635/200143999-fc43e7ae-7c16-4d39-9bf0-5b59ba4a0c03.png">
         27. First, give the Screen element a *label* on the right side of the pop-up: *Shipping Price Confirmation Screen*
-        28. [Image: image.png]
+        28. <img width="864" alt="image (2)" src="https://user-images.githubusercontent.com/39100635/200144002-3ecbbc41-679f-4d15-a605-6d9046e7cfa2.png">
         29. Then, from the left side of the pop-up, drag a *Display Text* component onto the screen in the center, and then *click on it*
         30. On the right side, give this Display Text an API name such as *ShippingConfirmation*
         31. Below that, paste the text: *The price to reship will be £{!Calculate_Shipping_Price}* or alternatively, type it and click the box that says *Insert a resource...* and type *calc* to locate the *variable* holding the output of our invocable apex and then click on it
         32. Click *Done* to save the screen
-        33. [Image: image.png]
+        33. <img width="947" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200144042-bfe31c07-a1e2-461e-b92d-90a93dc3fe01.png">
             1. This is an important concept to understand. If you use Apex inside of a Flow, the output of the Apex is automatically stored as a variable and can be referenced later, used in calculations, decisions, business logic, etc.
         34. Change the connections between the elements on the flow canvas:
             1. Click the connector between the *Location Selection* and *Set Stage To Part 4* elements and hit the *Delete* key
-            2. [Image: image.png]
+            2. <img width="328" alt="image (4)" src="https://user-images.githubusercontent.com/39100635/200144054-a0231e82-5b41-49cf-8deb-4e96c21972e4.png">
             3. Click the white dot at the bottom of the *Location Selection* element and drag it onto the *Calculate Shipping Price* element. 
             4. Do the same to connect *Calculate Shipping Price* to *Shipping Price Confirmation Screen*
             5. Lastly, connect *Shipping Price Confirmation Screen* to *Set Stage To Part 4*
-            6. [Image: image.png]
+            6. <img width="404" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200144061-1c4c85da-5f8c-4177-8ed5-0d491a61389d.png">
         35. *Save* the Flow and then click *Activate*
-        36. [Image: image.png]
+        36. <img width="412" alt="image (6)" src="https://user-images.githubusercontent.com/39100635/200144067-522813ef-2beb-4f10-a815-2c28b16de336.png">
         37. One last step to surface our new Flow! From Setup, start typing *Actions & Recommendations* in the quick search box in the top left and click on *Actions & Recommendations*
         38. On the row that says *Summer ’22 Flow Package*, click on the *dropdown arrow* on the far right, then click *Edit*
-        39. [Image: image.png]
+        39. <img width="1881" alt="image (7)" src="https://user-images.githubusercontent.com/39100635/200144074-572198e5-ebe0-436e-8fa7-f303d190aaa1.png">
         40. In the popup window, click *Next*, then *Next* again
-        41. [Image: image.png]
-        42. [Image: image.png]
+        41. <img width="856" alt="image (8)" src="https://user-images.githubusercontent.com/39100635/200144078-0de84c1a-90cd-4d6b-81fa-2154ae748575.png">
+        42. <img width="1146" alt="image (9)" src="https://user-images.githubusercontent.com/39100635/200144080-b4222f6e-73be-468d-9d2e-69577814051a.png">
         43. Now click the *Default* tab toward the top left
         44. In the *search* box that appears, search your new flow, *Create Reship Order Clone*, and *drag* it into the list on the right
         45. Click *Next* again
-        46. [Image: image.png]
+        46. <img width="1177" alt="image" src="https://user-images.githubusercontent.com/39100635/200144120-d14b9db4-1c74-4d32-a90d-c48c7df7ee3c.png">
         47. Again search your new flow, *Create Reship Order Clone*, and check the *checkbox* on the left of it
-        48. [Image: image.png]
+        48. <img width="1721" alt="image (1)" src="https://user-images.githubusercontent.com/39100635/200144122-cd9ad492-2fdd-4eff-a55a-8a908fcf2fd5.png">
         49. Click *Save*
         50. Now it is time to see your flow in action! From the App Launcher (the 9 dots in a square in the top left),  type and select *Order Management*
         51. Search *00001301* and click on the matching Order Summary Record
         52. You should see a screen like this: 
-        53. [Image: image.png]
+        53. <img width="1907" alt="image (2)" src="https://user-images.githubusercontent.com/39100635/200144132-475c2390-4ae8-419d-9160-b3617e09e2d3.png">
         54. Look for your *Create Reship Order Clone* flow in the Actions & Recommendations section. If you don’t see it, click on the blue *Add* button and then start typing *Create Reship Order Clone* and then click on it
         55. Work your way through the flow until you see our new the *screen* we added, which shows that our invocable apex method was successfully called by our flow and returned an amount for the shipping price
-        56. [Image: image.png]
+        56. <img width="850" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200144138-20774d15-65ba-4817-8d34-7011c735a8ab.png">
         57. We have successfully finished development on an ISV app for Salesforce Order Management!
         58. Next Steps on your own for further learning:
         59. The Commerce orgs (which you get to keep until they expire) have a more realistic sample implementation of our Shipping app in the Apex class B2BDeliverySample (go to Setup >> Apex Classes to find this in your org), feel free to save the code for reference.
