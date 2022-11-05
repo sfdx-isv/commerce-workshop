@@ -164,64 +164,64 @@ We will be connecting to *two orgs*: one to build our app inside of, and one to 
         59. The Commerce orgs (which you get to keep until they expire) have a more realistic sample implementation of our Shipping app in the Apex class B2BDeliverySample (go to Setup >> Apex Classes to find this in your org), feel free to save the code for reference.
     3. Part 3: Configure a Sample B2B Commerce ISV App
         1. In the org, click the *cog wheel* toward the top right of your screen and click *Setup*.
-        2. [Image: image.png]
+        2. <img width="930" alt="image" src="https://user-images.githubusercontent.com/39100635/200144305-b732136e-1485-4f3b-a375-c25c790c5aa2.png">
         3. Type “Flow” in the quick find search near the top left of the Setup menu, and click *Flows*. 
-        4. [Image: image.png]
+        4. <img width="348" alt="image (1)" src="https://user-images.githubusercontent.com/39100635/200144308-de13403e-3b9f-4bff-9487-36d5b9d5a175.png">
         5. Scroll to find and *click on* the checkout flow that is currently in use, *Checkout Flow Template* to open it
-        6. [Image: image.png]
+        6. <img width="871" alt="image (2)" src="https://user-images.githubusercontent.com/39100635/200144312-a8269692-fe01-4461-a713-26087e385df6.png">
         7. Click *Save As*
-        8. [Image: image.png]
+        8. <img width="673" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200144316-bb1159bc-ee3e-4037-adee-b2b03c6ba568.png">
         9. For Flow Label, type *Checkout Flow Template Clone*. The API name will be auto-populated to *Checkout_Flow_Template_Clone*.
         10. Click *Save*
-        11. [Image: image.png]
+        11. <img width="493" alt="image (4)" src="https://user-images.githubusercontent.com/39100635/200144324-9f907a62-5b09-4528-a3b9-88e7ac685a74.png">
         12. Now in your newly cloned flow, *drag* the screen downward on the flow canvas (the big area on the right side), and find the step that calculates *Shipping Cost*, and notice that it is a *subflow*
             1. *Subflows* are a way to modularize business logic, similar to helper or utility methods in code
-            2. [Image: image.png]
+            2. <img width="996" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200144337-66fc7e32-b4ef-4b5c-ab9b-6ac5aa2394aa.png">
         13. We will replace this step with a method from our *Apex class* that we deployed to this org earlier. To keep things simple, we will *not* use a subflow here.
             1. The use case is, we are swapping out the out-of-the box way that B2B Commerce calculates shipping costs, and replacing it with our Apex class that would normally call out to our off-platform, third party ISV app to perform complex shipping calculations based on inputs such as an array of items and their sizes, weights, quantities, shipping methods, distance needed to deliver, etc. For this workshop we are simply mocking the callout and returning a static currency amount. 
         14. From the *Flow Toolbox* panel on the left side, drag an *Action* element on to the canvas near the *Shipping Cost* subflow icon
-        15. [Image: image.png]
+        15. <img width="103" alt="image (6)" src="https://user-images.githubusercontent.com/39100635/200144348-c2a4d654-4617-40c4-8b43-82284bc77349.png">
         16. In the pop-up that opens, for the *Category* on the left side, click *Commerce*
         17. Then in the *Action* box on the right, select *Calculate Shipping Price*, which is an invocable Apex method in the Apex class we pushed into the org earlier.
-        18. [Image: image.png]
+        18. <img width="734" alt="image (7)" src="https://user-images.githubusercontent.com/39100635/200144358-a5dab5af-6459-45a1-b8bf-0935b5db0f2c.png">
         19. Name the element *Calculate Shipping Price* and click *Done*
-        20. [Image: image.png]
+        20. <img width="725" alt="image (8)" src="https://user-images.githubusercontent.com/39100635/200144361-8e6e622c-1106-4950-ba1c-21ea1e229911.png">
         21. Click on the *Shipping Cost* subflow element and hit the *Delete* key
-        22. [Image: image.png]
+        22. <img width="217" alt="image (9)" src="https://user-images.githubusercontent.com/39100635/200144369-7737248e-ae28-46cd-bd45-734eb34cc0a8.png">
         23. Notice the arrows that were connected to the *Shipping Cost* element disappear too
         24. We will need to re-create those arrows to connect our new *Calculate Shipping Price* element to the correct existing Flow elements to form a smooth end-to-end Flow
             1. Drag from the *white circle* at the bottom of the *Main Decision Hub* element onto the *Calculate Shipping Price* element and *release*
                 1. If you need to, zoom out by clicking the “*-*” icon in the bottom left of the flow canvas
-            2. [Image: image.png]
+            2. <img width="92" alt="image (10)" src="https://user-images.githubusercontent.com/39100635/200144388-703cc5fa-1a84-49d7-9705-ca98932d0fc6.png">
             3. In the popup window that appears, make sure *Shipping Cost* is selected and click *Done*
-            4. [Image: image.png]
+            4. <img width="672" alt="image (11)" src="https://user-images.githubusercontent.com/39100635/200144391-0b632583-ae14-455d-a074-36fa3aa8b90d.png">
             5. Next, drag from the *white circle* at the bottom of the *Calculate Shipping Price* element onto the *Assignment Loop* element and *release*
-            6. [Image: image.png]
+            6. <img width="88" alt="image (12)" src="https://user-images.githubusercontent.com/39100635/200144397-74da06bf-63c2-4bb9-8a24-63e22d2a7f99.png">
             7. We are done with the Flow. Here is what it should look like:
-            8. [Image: image.png]
-        25. {self} Again, this Apex would normally be used to call out to an ISV app. For demo purposes, we are returning a static value to mock this callout
+            8. <img width="639" alt="image (13)" src="https://user-images.githubusercontent.com/39100635/200144404-9b5da7e7-5ee1-4acb-9e77-e1d56c0336a5.png">
+        25. Again, this Apex would normally be used to call out to an ISV app. For demo purposes, we are returning a static value to mock this callout
             1. Let’s quickly look at the Apex. Notice the @invocableMethod decorator, which makes it available to use in Flow Builder
-            2. [Image: image.png]
+            2. <img width="395" alt="image" src="https://user-images.githubusercontent.com/39100635/200144480-5746492d-7337-46b6-8d27-8479aefd7e37.png">
         26. Click *Save* in the top right corner to save the Flow
         27. Click *Activate*
-        28. [Image: image.png]
+        28. <img width="412" alt="image (1)" src="https://user-images.githubusercontent.com/39100635/200144492-d367635b-7c16-45b7-a13b-201fce7ab9da.png">
         29. Go into Setup, type *All Sites* in the quick search, and click *All Sites*
         30. Click on *Builder* next to the *AlpineB2B* site
-        31. [Image: image.png]
+        31. <img width="450" alt="image (2)" src="https://user-images.githubusercontent.com/39100635/200144502-11d9a1f0-9f31-4655-848e-8c1d4c027e33.png">
         32. In Experience Builder, click *Home* in the top toolbar on the left, then click on *Checkout* 
-        33. [Image: image.png]
+        33. <img width="1476" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200144508-ba7f2cf7-62d0-467a-a36b-91f8a5619a4c.png">
         34. Click on the *Checkout Flow* component to bring up a floating panel on the right. In this panel, select your new Flow, *Checkout Flow Template Clone* so that it will run the newly cloned flow instead of the original checkout flow demoed earlier
         35. In the top right of Experience Builder, click *Publish*, the *Publish* again so that your changes can be seen in the Site
-        36. [Image: image.png]
-        37. [Image: image.png]
+        36. <img width="1404" alt="image (4)" src="https://user-images.githubusercontent.com/39100635/200144518-83273f55-6641-4f32-a32a-0abdd82ea53f.png">
+        37. <img width="624" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200144529-ee9ce7da-9f99-49bd-81e0-8f49404da76a.png">
         38. SKIP for workshop Try out the new checkout flow to show the difference
             1. On your tab that still has salesforce open (not the B2B Site), click the app launcher and type Contacts, and click *Contacts*
-            2. [Image: image.png]
+            2. <img width="170" alt="image (6)" src="https://user-images.githubusercontent.com/39100635/200144542-27402d12-6499-4120-a4be-29f9c480b702.png">
             3. Search for *Bonnie Buyer* and click into this record
-            4. [Image: image.png]
+            4. <img width="916" alt="image (7)" src="https://user-images.githubusercontent.com/39100635/200144548-aee00cb9-bba5-42c4-a62e-85c20c3e43bb.png">
             5. Click on the dropdown arrow in the actions area near the top right of the screen, and click on *Log in to Experience as User*
-            6. [Image: image.png]
-                1. Note: if you don’t see this button appearing, click the cog wheel near the top right of the screen, click *Edit Page*, click the top right area with these action buttons, then click *Add Action* near the bottom right, add the *Log in to Experience as User* action to the list, and click *Done*. Click *Save* and then *Activation* to make sure the page is assigned as the Org Default, then return to the page by clicking the left arrow in the top left of the edit screen
+            6. <img width="1720" alt="image (8)" src="https://user-images.githubusercontent.com/39100635/200144557-284b340c-b0bd-427e-84dc-e59135df86a5.png">
+                1. Note: if you don’t see this button appearing, click the cog wheel near the top right of the screen, click *Edit Page*, click the top right area with these action buttons, then click *Add Action* near the bottom right, add the *Log in to Experience as User* action to the list, and click *Done*. Click *Save* and then click *Activation* to make sure the page is assigned as the Org Default, then return to the page by clicking the left arrow in the top left of the edit screen
             7. Add one of the products to your cart, click the cart icon, and click *Checkout* to see our flow working
         39. The development work is complete!
 3. Pull the created metadata out of the org using VS Code
