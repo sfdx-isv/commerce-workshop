@@ -40,47 +40,47 @@ We will be connecting to *two orgs*: one to build our app inside of, and one to 
         4. <img width="684" alt="image (4)" src="https://user-images.githubusercontent.com/39100635/200142281-ed7be509-d026-4ab2-9a27-34bdb0adbefb.png">
         5. <img width="715" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200142289-a7921885-6544-4e7c-8161-95a69b400856.png">
         6. In the bottom toolbar on the left side, click near the *X* and *!* icons to bring up the embedded terminal, then click *TERMINAL*
-        7. [Image: image.png]
+        7. <img width="930" alt="image (6)" src="https://user-images.githubusercontent.com/39100635/200142923-d7be5ba9-c968-4213-9dcd-58623ebc24e3.png">
         8. type  `git clone ` and then paste the URL you copied from the Github repo
             1. `git clone https://github.com/sfdx-isv/commerce-workshop.git`
             2. Hit *Enter/Return* to run the command
         9. Your file directory on the left hand side of VS Code should now include *commerce-workshop* in the list of folders and files
-        10. [Image: image.png]
+        10. <img width="243" alt="image (7)" src="https://user-images.githubusercontent.com/39100635/200142932-7765214a-25eb-4afa-97d3-71a3a028c7e1.png">
         11. Now we need to open VS code in the context of that new folder. Repeat the steps to open a folder with VS Code:
             1. Go to *File* >> *Open Folder* >> *commerce-workshop>> Open*. 
-            2. [Image: image.png]
-            3. [Image: image.png]
+            2. <img width="684" alt="image (8)" src="https://user-images.githubusercontent.com/39100635/200142946-a618c595-9f3f-4adb-898f-45d7d7f5936b.png">
+            3. <img width="720" alt="image (9)" src="https://user-images.githubusercontent.com/39100635/200142949-e5fdeb93-ded9-4dc5-8d6a-2c26979fce40.png">
     2. Next, we will connect the Salesforce CLI to the *Dev Hub* org (so we can later package our app)
         1. In VS Code, click on *No Default Org Set* on the bottom toolbar, which will open the Command Palette
         2. In the Command Palette, click on *SFDX: Authorize a Dev Hub*
-        3. [Image: image.png]
+        3. <img width="1109" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200143047-0d78eb9a-e021-4125-91c1-4c7a571b8005.png">
         4. This will open a new tab in your browser with a Salesforce *login screen*
-        5. [Image: image.png]
+        5. <img width="411" alt="image (4)" src="https://user-images.githubusercontent.com/39100635/200143051-238b722b-910d-4f9e-81a1-dca2cc305230.png">
             1. Note: these instructions are written for a live workshop where I set up the orgs and everyone’s logins beforehand. If you are following along yourself, you can create your own [Dev Hub](https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/sfdx_setup_enable_devhub.htm) and your own Commerce org (using either a [Trialforce Template and Environment Hub](https://salesforce.quip.com/q9RUACra2Jfa) or a [Demo org](https://partners.salesforce.com/pdx/s/learn/article/demo-station-for-partners-MCUTYORCVUVNCJTIVCKP6VHUKF3M?language=en_US) for the Commerce org) for free
         6. Log in with your username and password for this Dev Hub org: 
             1. Username: <<TheEmailYouRegisteredWith>>.commerce-workshop-dev-hub
             2. Password: (I will give this to you in the workshop)
         7. Click *Allow*, which authorizes the Salesforce CLI to connect to this Dev Hub org in the context of your user login
-        8. [Image: image.png]
+        8. <img width="426" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200143063-5e267760-854f-4167-bd3f-6b96faecfc7d.png">
         9. If it asks for your phone number, click *Remind Me Later*
-        10. [Image: image.png]
+        10. <img width="406" alt="image (6)" src="https://user-images.githubusercontent.com/39100635/200143068-1ab32db8-9879-4906-a78b-1f22a756ca72.png">
     3. Finally, connect the Salesforce CLI to your Commerce org (where we will build our app)
         1. In VS Code, once again click on *No Default Org Set* on the bottom toolbar, which will open the Command Palette
         2. This time in the Command Palette, click on *SFDX: Authorize an Org* (not a Dev Hub)
-        3. [Image: image.png]
+        3. <img width="1053" alt="image" src="https://user-images.githubusercontent.com/39100635/200143235-30e64831-1e9d-4905-99f0-4f04a9a534d7.png">
         4. This brings up a set of options, click *Production*
-        5. [Image: image.png]
+        5. <img width="552" alt="image (1)" src="https://user-images.githubusercontent.com/39100635/200143246-fedf9e94-a76b-4c46-929f-ca45580196e0.png">
         6. Next, for the org’s alias, type *commerce-workshop-develop* and hit *Enter/Return*
-        7. [Image: image.png]
+        7. <img width="633" alt="image (2)" src="https://user-images.githubusercontent.com/39100635/200143251-2f4e450c-2bf4-4926-b291-45409e8252e1.png">
         8. This will open a new tab in your browser with a Salesforce *login screen*
-        9. [Image: image.png]
+        9. <img width="411" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200143264-db69a3fc-2064-4d48-9985-15c60d3b6d83.png">
         10. Log in with your username and password for this org: 
             1. Username: <<TheEmailYouRegisteredWith>>.commerce-workshop-develop
             2. Password: (I will give this to you in the workshop)
         11. Click *Agree*, to authorize the Salesforce CLI to connect to this org 
-        12. [Image: image.png]
+        12. <img width="401" alt="image (4)" src="https://user-images.githubusercontent.com/39100635/200143273-5ad0febb-9493-4e2d-bae7-fce56dfe329e.png">
         13. Notice the bottom toolbar of VS Code no longer says “No Default Org Set”, it says *commerce-workshop-develop*, which is the alias we gave to the Commerce org. It also shows a *plug* icon to indicate that Salesforce CLI is connected to default org
-        14. [Image: image.png]
+        14. <img width="900" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200143286-65893bbf-4b72-425f-be39-974f70e5f3a1.png">
     4. Congrats! The Salesforce CLI is now connected to both orgs we need: the *Dev Hub* (to package our app later), and the *Commerce* org (where we will build our app now)
 2. Build the app in the Commerce org
     1. Part 1: Push code into the Commerce Org
