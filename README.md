@@ -3,7 +3,7 @@
 
 # Workshop: Build an ISV app to extend Salesforce Order Management and B2B Commerce
 
-In this workshop we will be developing and packaging a sample AppExchange ISV app that works with the Salesforce [B2B Commerce](https://help.salesforce.com/s/articleView?id=sf.comm_intro.htm&type=5) and [Order Management](https://help.salesforce.com/s/articleView?id=sf.om_order_management.htm&type=5) products. For packaging, we will be using [Second-Generation Packaging](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp.htm) (2GP).
+In this workshop we will be developing and packaging a sample AppExchange ISV app that works with the Salesforce [B2B Commerce](https://help.salesforce.com/s/articleView?id=sf.comm_intro.htm&type=5) and [Order Management](https://help.salesforce.com/s/articleView?id=sf.om_order_management.htm&type=5) products, which are both part of the Salesforce core platform tech stack. For packaging, we will be using [Second-Generation Packaging](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp.htm) (2GP).
 
 ## Big picture steps: 
 
@@ -34,11 +34,11 @@ We will be connecting to *two orgs*: one to build our app inside of, and one to 
 1. Tooling setup:
     1. First, we will *clone the Github repo* we’ve prepared for this workshop, in the interest of time we have partially built our ISV app in advance
         1. Go to the [commerce-workshop Github repo](https://github.com/sfdx-isv/commerce-workshop), click the green *Code* button, and *copy* the URL from there
-            1. [Image: image.png]
+            1. <img width="1016" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200142271-ee003440-c320-4411-b3c4-9ca7d0a01ec2.png">
         2. Now open *VS Code*. You may see either the “Get Started” screen in VS Code, or it may open the most recent directory you’ve been working in, it makes no difference for this exercise. 
         3. Go to *File* >> *Open Folder* >> *Desktop >> Open*. 
-        4. [Image: image.png]
-        5. [Image: image.png]
+        4. <img width="684" alt="image (4)" src="https://user-images.githubusercontent.com/39100635/200142281-ed7be509-d026-4ab2-9a27-34bdb0adbefb.png">
+        5. <img width="715" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200142289-a7921885-6544-4e7c-8161-95a69b400856.png">
         6. In the bottom toolbar on the left side, click near the *X* and *!* icons to bring up the embedded terminal, then click *TERMINAL*
         7. [Image: image.png]
         8. type  `git clone ` and then paste the URL you copied from the Github repo
