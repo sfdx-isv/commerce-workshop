@@ -226,15 +226,14 @@ We will be connecting to **two orgs**: one to build our app inside of, and one t
             7. Add one of the products to your cart, click the cart icon, and click **Checkout** to see our flow working
         39. The development work is complete!
 3. Pull the created metadata out of the org using VS Code
-    1. {self} Talk about packaging, summary of how to get from dev-complete to an AppExchange listing
-    2. {self} Talk about how today we are working in a non-scratch org due to scratch org tooling for Commerce still being worked on. If we were using a scratch org, all of our changes to the org’s metadata would automatically be tracked, and we could just pull changes without having to remember every piece of metadata we created or changed
-    3. To retrieve our B2B Commerce flow, paste the following command into VS Code’s embedded terminal:
+    1. Note: Today we are developing in a non-scratch org due to scratch org tooling for Order Management still being worked on. If we were developing in a scratch org, all of our changes to the org’s metadata would automatically be tracked, and we could just pull changes without having to remember every piece of metadata we created or changed
+    2. To retrieve our B2B Commerce flow, paste the following command into VS Code’s embedded terminal:
         1. `sfdx force:source:retrieve -m Flow:Checkout_Flow_Template_Clone`
             1. You should receive a confirmation message:
             2. <img width="769" alt="image" src="https://user-images.githubusercontent.com/39100635/200145726-cf622a20-3075-474d-a89e-5246a5eb917f.png">
         2. To retrieve the Order Management flow, paste `sfdx force:source:retrieve -m Flow:Create_Reship_Order_Clone` into VS Code's embedded terminal
-    4. All of the functionality that we developed inside the org, along with the pre-written code we got from Github initially, is now in our **local directory** which can be seen in VS Code’s left pane. Next step is to package it for distribution and sale
-    5. We are going to skip a few steps of development lifecycle here. Here is an opinionated view of the steps we are skipping:
+    3. All of the functionality that we developed inside the org, along with the pre-written code we got from Github initially, is now in our **local directory** which can be seen in VS Code’s left pane. Next step is to package it for distribution and sale
+    4. We are going to skip a few steps of development lifecycle here. Here is an opinionated view of the steps we are skipping:
         1. Normally, we would deploy the metadata into a scratch org to test whether it can be deployed successfully and that it functions as expected inside a different org (Unit tests, QA, UAT, integration test, etc.)
         2. If the above tests are successful, we would stage & commit the changes to git and push to the developer’s personal branch on the Github repo
         3. We would open a Pull Request, which would trigger a CI/CD job which would run a static code analysis, deploy the metadata into a scratch org, run all apex (and any other types of) tests, and if everything passes, notify a dev lead to do a code review
