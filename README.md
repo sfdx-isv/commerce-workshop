@@ -65,8 +65,8 @@ We will be connecting to **two orgs**: one to build our app inside of, and one t
             2. Password: (I will give this to you in the workshop)
         7. Click **Allow**, which authorizes the Salesforce CLI to connect to this Dev Hub org in the context of your user login
         8. <img width="426" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200143063-5e267760-854f-4167-bd3f-6b96faecfc7d.png">
-        10. If it asks for your phone number, click **Remind Me Later**
-        11. <img width="406" alt="image (6)" src="https://user-images.githubusercontent.com/39100635/200143068-1ab32db8-9879-4906-a78b-1f22a756ca72.png">
+        9. If it asks for your phone number, click **Remind Me Later**
+        10. <img width="406" alt="image (6)" src="https://user-images.githubusercontent.com/39100635/200143068-1ab32db8-9879-4906-a78b-1f22a756ca72.png">
     3. Finally, connect the Salesforce CLI to your Commerce org (where we will build our app)
         1. In VS Code, once again click on **No Default Org Set** on the bottom toolbar, which will open the Command Palette
         2. This time in the Command Palette, click on **SFDX: Authorize an Org** (not a Dev Hub)
