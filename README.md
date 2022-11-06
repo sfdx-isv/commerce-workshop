@@ -34,22 +34,25 @@ We will be connecting to **two orgs**: one to build our app inside of, and one t
 1. Tooling setup:
     1. First, we will **clone the Github repo** we’ve prepared for this workshop, in the interest of time we have partially built our ISV app in advance
         1. Go to the [commerce-workshop Github repo](https://github.com/sfdx-isv/commerce-workshop), click the green **Code** button, and **copy** the URL from there
-            1. <img width="1016" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200142271-ee003440-c320-4411-b3c4-9ca7d0a01ec2.png">
-        2. Now open **VS Code**. You may see either the “Get Started” screen in VS Code, or it may open the most recent directory you’ve been working in, it makes no difference for this exercise. 
-        3. Go to **File** >> **Open Folder** >> **Desktop >> Open**. 
-        4. <img width="684" alt="image (4)" src="https://user-images.githubusercontent.com/39100635/200142281-ed7be509-d026-4ab2-9a27-34bdb0adbefb.png">
-        5. <img width="715" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200142289-a7921885-6544-4e7c-8161-95a69b400856.png">
-        6. In the bottom toolbar on the left side, click near the **X** and **!** icons to bring up the embedded terminal, then click **TERMINAL**
-        7. <img width="930" alt="image (6)" src="https://user-images.githubusercontent.com/39100635/200142923-d7be5ba9-c968-4213-9dcd-58623ebc24e3.png">
-        8. type  `git clone ` and then paste the URL you copied from the Github repo
-            1. `git clone https://github.com/sfdx-isv/commerce-workshop.git`
-            2. Hit **Enter/Return** to run the command
-        9. Your file directory on the left hand side of VS Code should now include **commerce-workshop** in the list of folders and files
-        10. <img width="243" alt="image (7)" src="https://user-images.githubusercontent.com/39100635/200142932-7765214a-25eb-4afa-97d3-71a3a028c7e1.png">
-        11. Now we need to open VS code in the context of that new folder. Repeat the steps to open a folder with VS Code:
-            1. Go to **File** >> **Open Folder** >> **commerce-workshop>> Open**. 
-            2. <img width="684" alt="image (8)" src="https://user-images.githubusercontent.com/39100635/200142946-a618c595-9f3f-4adb-898f-45d7d7f5936b.png">
-            3. <img width="720" alt="image (9)" src="https://user-images.githubusercontent.com/39100635/200142949-e5fdeb93-ded9-4dc5-8d6a-2c26979fce40.png">
+        2. <img width="1016" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200142271-ee003440-c320-4411-b3c4-9ca7d0a01ec2.png">
+        3. Now open **VS Code**. You may see either the “**Get Started**” screen in VS Code, or it may open the most recent directory you’ve been working in. 
+        4. Here is what the **Get Started** screen looks like:
+        5. <img width="879" alt="image" src="https://user-images.githubusercontent.com/39100635/200148663-6901f7d0-0d0d-423d-8806-43d62512cdeb.png">
+        6. If you do not see this **Get Started** screen:
+            1. Open it, by clicking into VS Code’s **Help** menu >> **Get Started**
+            2. <img width="883" alt="image (1)" src="https://user-images.githubusercontent.com/39100635/200148666-e30999a2-9eaf-4135-bf3c-b9607c80a13c.png">
+        7. From the **Get Started** Screen, click on **Clone Git Repository...**
+        8. <img width="877" alt="image (2)" src="https://user-images.githubusercontent.com/39100635/200148670-2be399eb-d1f6-4851-ae8f-597dd97bc1c8.png">
+        9. This will open the **command palette** with instructions to provide the repository URL
+        10. <img width="771" alt="image (3)" src="https://user-images.githubusercontent.com/39100635/200148672-9b428fa4-f104-47a7-bbfc-66e5753066ce.png">
+        11. Paste the URL we copied from Github earlier, and hit the **Enter/Return** key
+        12. <img width="775" alt="image (4)" src="https://user-images.githubusercontent.com/39100635/200148676-50bbd73f-cdb2-459e-9632-8808ac91eb2d.png">
+        13. A popup window will open. Click **Desktop**, then click **Select Repository Location**
+        14. <img width="810" alt="image (5)" src="https://user-images.githubusercontent.com/39100635/200148678-8c53adc1-1010-42a2-bb94-ff2b2f8728ec.png">
+        15. This will open a new popup window. Click **Open**
+        16. <img width="255" alt="image (7)" src="https://user-images.githubusercontent.com/39100635/200148682-61ac365b-c165-4637-86ec-989271d5a919.png">
+        17. This will open VS Code in the context of the new repository we have just cloned to our local machine. You should now see **commerce-workshop** as the root folder in VS Code’s left pane
+        18. <img width="272" alt="image" src="https://user-images.githubusercontent.com/39100635/200148948-226fd277-c28e-4032-b889-e73b6c816213.png">
     2. Next, we will connect the Salesforce CLI to the **Dev Hub** org (so we can later package our app)
         1. In VS Code, click on **No Default Org Set** on the bottom toolbar, which will open the Command Palette
         2. In the Command Palette, click on **SFDX: Authorize a Dev Hub**
