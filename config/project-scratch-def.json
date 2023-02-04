@@ -27,8 +27,11 @@
         },
         "orderSettings": {
             "enableOrders": true,
+            "enableNegativeQuantity": true,
+            "enableZeroQuantity": true,
             "enableEnhancedCommerceOrders": true,
-            "enableOptionalPricebook": true
+            "enableOptionalPricebook": true,
+            "enableOrderEvents": true
         },
         "commerceSettings": {
             "commerceEnabled": true
